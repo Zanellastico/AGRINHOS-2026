@@ -1,1 +1,670 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7f2;
+    color: #263326;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e2e7df;
+}
+
+.navbar {
+    width: min(1200px, 92%);
+    margin: auto;
+
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #286b3c;
+}
+
+.logo span {
+    font-size: 1.6rem;
+}
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    font-size: 0.95rem;
+    font-weight: bold;
+
+    color: #344234;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #2d8a49;
+}
+
+.menu-mobile {
+    display: none;
+
+    border: none;
+    background: none;
+
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+
+    width: min(1200px, 90%);
+    margin: auto;
+    padding: 80px 0;
+}
+
+.hero-conteudo {
+    animation: aparecer 1s ease;
+}
+
+.subtitulo,
+.etiqueta {
+    color: #3d8c4f;
+
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    font-size: 0.85rem;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #3d8c4f;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 580px;
+    margin-bottom: 30px;
+    color: #566056;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 480px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==============================
+   BOTÕES
+============================== */
+
+.botao {
+    display: inline-block;
+
+    background: #347d45;
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    border: none;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #245d32;
+    transform: translateY(-3px);
+}
+
+.botao-claro {
+    background: white;
+    color: #286b3c;
+}
+
+.botao-claro:hover {
+    background: #eef5eb;
+}
+
+
+/* ==============================
+   SEÇÕES
+============================== */
+
+.secao {
+    padding: 100px 0;
+}
+
+.introducao {
+    background: white;
+}
+
+.introducao .container {
+    max-width: 850px;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+.introducao p {
+    margin-bottom: 20px;
+    color: #5a645b;
+}
+
+
+/* ==============================
+   CARDS
+============================== */
+
+.secao-destaque {
+    background: #edf4e9;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    margin-top: 50px;
+}
+
+.card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(38, 61, 40, 0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.icone {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #647064;
+}
+
+
+/* ==============================
+   IMAGEM
+============================== */
+
+.imagem-secao {
+    position: relative;
+    height: 550px;
+
+    overflow: hidden;
+}
+
+.imagem-secao img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.6);
+}
+
+.imagem-texto {
+    position: absolute;
+
+    left: 10%;
+    bottom: 15%;
+
+    max-width: 550px;
+
+    color: white;
+}
+
+.imagem-texto h2 {
+    margin-bottom: 15px;
+}
+
+.imagem-texto p {
+    font-size: 1.1rem;
+}
+
+
+/* ==============================
+   IMPACTOS
+============================== */
+
+.impactos {
+    margin-top: 50px;
+
+    display: grid;
+    gap: 20px;
+}
+
+.impacto {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+
+    padding: 25px;
+
+    border-bottom: 1px solid #dfe6dd;
+}
+
+.impacto span {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    color: #429052;
+}
+
+.impacto h3 {
+    margin-bottom: 8px;
+}
+
+.impacto p {
+    color: #667066;
+}
+
+
+/* ==============================
+   SUSTENTABILIDADE
+============================== */
+
+.sustentabilidade {
+    background: #244b2d;
+    color: white;
+}
+
+.sustentabilidade-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+    align-items: center;
+}
+
+.sustentabilidade .etiqueta {
+    color: #a9d7a7;
+}
+
+.sustentabilidade p {
+    color: #d4e1d3;
+    margin-bottom: 20px;
+}
+
+.lista-sustentavel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.lista-sustentavel div {
+    background: rgba(255, 255, 255, 0.08);
+
+    padding: 25px;
+
+    border-radius: 15px;
+}
+
+.lista-sustentavel strong {
+    font-size: 2rem;
+}
+
+.lista-sustentavel p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+/* ==============================
+   RISCOS
+============================== */
+
+.riscos {
+    background: white;
+}
+
+.riscos > .container > p:not(.etiqueta) {
+    max-width: 700px;
+    color: #697369;
+}
+
+.riscos-grid {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.risco {
+    padding: 30px;
+
+    border: 1px solid #e1e6df;
+    border-radius: 18px;
+
+    background: #fafcf9;
+}
+
+.risco h3 {
+    margin-bottom: 12px;
+}
+
+.risco p {
+    color: #687168;
+}
+
+
+/* ==============================
+   FUTURO
+============================== */
+
+.futuro {
+    background: #eef4eb;
+}
+
+.texto-central {
+    max-width: 700px;
+    color: #5e695f;
+}
+
+.habilidades {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.habilidades div {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.habilidades span {
+    font-size: 2.5rem;
+}
+
+.habilidades h3 {
+    margin: 15px 0 10px;
+}
+
+.habilidades p {
+    color: #687168;
+}
+
+
+/* ==============================
+   CONCLUSÃO
+============================== */
+
+.conclusao {
+    padding: 110px 0;
+
+    text-align: center;
+
+    background: #347d45;
+
+    color: white;
+}
+
+.conclusao .container {
+    max-width: 850px;
+}
+
+.conclusao h2 {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+}
+
+.conclusao p {
+    color: #e1eee1;
+    margin-bottom: 30px;
+}
+
+.mensagem {
+    min-height: 30px;
+    margin-top: 20px;
+
+    font-weight: bold;
+}
+
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+footer {
+    background: #172b1b;
+    color: white;
+
+    padding: 50px 0;
+}
+
+.footer-conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #b9c6ba;
+    font-size: 0.9rem;
+}
+
+
+/* ==============================
+   ANIMAÇÕES
+============================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 900px) {
+
+    .menu {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 25px;
+
+        display: none;
+    }
+
+    .menu.ativo {
+        display: flex;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 60px 0;
+    }
+
+    .hero-imagem img {
+        height: 400px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .habilidades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sustentabilidade-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-imagem img {
+        height: 300px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .riscos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .habilidades {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-sustentavel {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem-secao {
+        height: 450px;
+    }
+
+    .imagem-texto {
+        left: 7%;
+        right: 7%;
+    }
+
+    .footer-conteudo {
+        flex-direction: column;
+    }
+
+}
